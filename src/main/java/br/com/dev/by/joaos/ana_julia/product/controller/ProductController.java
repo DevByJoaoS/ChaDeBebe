@@ -11,6 +11,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/produto/v1")
 @RequiredArgsConstructor
 public class ProductController {
@@ -18,16 +19,19 @@ public class ProductController {
     @Autowired
     private final ProductService productService;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     private List<Product> findAll(){
         return this.productService.findAll();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping
     private Product createProduct(@RequestBody Product product){
         return this.productService.createProduct(product);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/{id}")
     private void updateProduct(@PathVariable Long id){
         this.productService.selectProduct(id);
