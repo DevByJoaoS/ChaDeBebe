@@ -11,7 +11,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://devbyjoaos.github.io")
 @RequestMapping("/pessoa/v1")
 @RequiredArgsConstructor
 public class PersonController {
@@ -19,13 +19,13 @@ public class PersonController {
     @Autowired
     private final PersonService personService;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://devbyjoaos.github.io")
     @PostMapping
     private Person createPerson(@RequestBody Person person){
         return this.personService.createPersonAndSelectProduct(person);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://devbyjoaos.github.io")
     @GetMapping
     private List<GiftListDto> findGiftList(){
         return this.personService.findGiftList();
